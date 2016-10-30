@@ -1,3 +1,5 @@
+// this is back tracking solution in which we try to place queens in one column at a time
+
 #include<stdio.h>
 
 int board[100][100]={0};
@@ -36,7 +38,7 @@ int placeQueens(int column, int size){
 		
 	for(i=0; i < size; i++){
 		board[i][column] = 1;
-		
+		// check if placing queen in the current position causes any conflicts
 		if(isOK(i, column, size)){
 			if(placeQueens(column+1, size)){
 				return 1;
